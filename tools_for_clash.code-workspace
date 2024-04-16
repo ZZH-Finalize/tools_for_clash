@@ -1,0 +1,82 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "clash工具"
+		}
+	],
+    "settings": {
+        "rust-analyzer.linkedProjects": [
+            ".\\Cargo.toml"
+        ],
+        "rust-analyzer.showUnlinkedFileNotification": false
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+            {
+                "label": "build",
+                "type": "cargo",
+                "command": "build",
+                "args": [],
+                "problemMatcher": [
+                    "$rustc"
+                ],
+                "presentation": {
+                    "clear": true,
+                    "focus": true,
+                    "panel": "shared"
+                },
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                }
+            },
+            {
+                "label": "build -- release",
+                "type": "cargo",
+                "command": "build",
+                "args": [
+                    "--release"
+                ],
+                "problemMatcher": [
+                    "$rustc"
+                ],
+                "presentation": {
+                    "clear": true,
+                    "focus": true,
+                    "panel": "shared"
+                },
+                // "group": {
+                //     "kind": "build",
+                //     "isDefault": true
+                // }
+            },
+            {
+                "label": "test",
+                "type": "cargo",
+                "command": "run",
+                "args": [
+                    "--bin",
+                    "${fileBasenameNoExtension}"
+                ],
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": true,
+                    "panel": "shared",
+                    "showReuseMessage": true,
+                    "clear": true
+                },
+                "group": {
+                    "kind": "test",
+                    "isDefault": true
+                }
+            }
+        ]
+	},
+	"launch": {
+		"configurations": [],
+		"compounds": []
+	}
+}
