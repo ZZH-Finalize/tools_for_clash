@@ -119,7 +119,9 @@ rules:
   - DOMAIN-SUFFIX, windowsupdate.com, DIRECT
   - DOMAIN-SUFFIX, windowsupdate.microsoft.com, DIRECT
   - DOMAIN, download.microsoft.com, DIRECT
-  # Copilot
+  # Bing & Copilot
+  - DOMAIN, cn.bing.com, DIRECT
+  - DOMAIN-SUFFIX, bing.com, US-Cloudflare
   - DOMAIN-KEYWORD, copilot, US-Cloudflare
   # 国内直连
   - GEOIP, CN, DIRECT
