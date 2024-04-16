@@ -119,6 +119,9 @@ rules:
   - DOMAIN-SUFFIX, windowsupdate.com, DIRECT
   - DOMAIN-SUFFIX, windowsupdate.microsoft.com, DIRECT
   - DOMAIN, download.microsoft.com, DIRECT
+  # 内网访问
+  - IP-CIDR, 192.0.0.0/24, DIRECT, no-resolve
+  - IP-CIDR, 172.0.0.0/24, DIRECT, no-resolve
   # Bing & Copilot
   - DOMAIN, cn.bing.com, DIRECT
   - DOMAIN-SUFFIX, bing.com, US-Cloudflare
