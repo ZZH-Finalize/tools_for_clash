@@ -106,5 +106,5 @@ rules:
   - DOMAIN-KEYWORD, copilot, US-Cloudflare
   # 国内直连
   - GEOIP, CN, DIRECT
-  # 其余全部自动选择
-  - MATCH, US-Cloudflare
+  # 其余全部路由到目标区域
+  - MATCH, region-select
