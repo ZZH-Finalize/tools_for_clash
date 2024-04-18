@@ -99,6 +99,8 @@ rules:
   # 内网访问
   - IP-CIDR, 192.0.0.0/24, DIRECT, no-resolve
   - IP-CIDR, 172.0.0.0/24, DIRECT, no-resolve
+  - IP-CIDR, 127.0.0.0/24, DIRECT, no-resolve
+  - DOMAIN, localhost, DIRECT, no-resolve
   # Bing & Copilot
   - DOMAIN, cn.bing.com, DIRECT
   - DOMAIN-SUFFIX, bing.com, US-Cloudflare
