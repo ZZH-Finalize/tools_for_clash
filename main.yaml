@@ -104,6 +104,8 @@ rules:
   - DOMAIN-KEYWORD, outlook, DIRECT
   - DOMAIN-SUFFIX, bing.com, US-Cloudflare
   - DOMAIN-KEYWORD, copilot, US-Cloudflare
+  # misc
+  - DOMAIN, www.asmr.pw, DIRECT
   # 国内直连
   - GEOIP, CN, DIRECT
   # 其余全部路由到目标区域
