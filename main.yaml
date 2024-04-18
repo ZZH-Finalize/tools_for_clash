@@ -110,7 +110,31 @@ rules:
   - DOMAIN-KEYWORD, outlook, DIRECT
   - DOMAIN-KEYWORD, vscode, DIRECT
   - DOMAIN, www.asmr.pw, DIRECT
+  - PROCESS-NAME, usbipd.exe, DIRECT
+  - PROCESS-NAME, qq.exe, DIRECT
+  - PROCESS-NAME, WeChat.exe, DIRECT
+  - PROCESS-NAME, WeChatAppEx.exe, DIRECT
+  - PROCESS-NAME, WinStore.App.exe, DIRECT
+  - PROCESS-NAME, YourPhoneAppProxy.exe, DIRECT
+  - PROCESS-NAME, PhoneExperienceHost.exe, DIRECT
   # 国内直连
   - GEOIP, CN, DIRECT
   # 其余全部路由到目标区域
   - MATCH, region-select
+
+# type of rules
+# DOMAIN
+# DOMAIN-SUFFIX
+# DOMAIN-KEYWORD
+# GEOIP
+# IP-CIDR
+# IP-CIDR6
+# SRC-IP-CIDR
+# SRC-PORT
+# DST-PORT
+# PROCESS-NAME
+# PROCESS-PATH
+# IPSET
+# RULE-SET
+# SCRIPT
+# MATCH
