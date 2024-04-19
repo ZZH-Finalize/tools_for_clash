@@ -46,7 +46,7 @@ proxies:
 
 proxy-groups:
 - name: CN-HK
-  type: url-test
+  type: load-balance # url-test
   url: https://www.google.com/
   interval: 300
   proxies:
@@ -68,7 +68,7 @@ proxy-groups:
     - 47.243.30.66 - 37469
 
 - name: US-Cloudflare
-  type: url-test
+  type: load-balance # url-test
   url: https://www.google.com/
   interval: 300
   proxies:
