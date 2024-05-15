@@ -58,7 +58,8 @@
                 "command": "run",
                 "args": [
                     "--bin",
-                    "${fileBasenameNoExtension}"
+                    "${fileBasenameNoExtension}",
+                    "proxies"
                 ],
                 "presentation": {
                     "echo": true,
