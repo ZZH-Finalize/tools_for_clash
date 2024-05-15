@@ -40,22 +40,18 @@ pub fn cmp_by_timeout(x: &Value, y: &Value) -> Ordering {
 }
 
 pub fn main() -> ExitCode {
-    let url = String::from_str("https://checkerproxy.net").unwrap();
+    let mut url = String::from_str("https://checkerproxy.net/api/archive/").unwrap();
     let now = Local::now().format("%Y-%m-%d");
-    let api_url = url.clone() + "/api/archive/" + &now.to_string();
-    let ref_url = url.clone() + "/archive/" + &now.to_string();
+    url += &now.to_string();
 
-    let mut headers = HeaderMap::new();
-    headers.append("Referer", HeaderValue::from_str(ref_url.as_str()).unwrap());
-    headers.append("Host", HeaderValue::from_str("checkerproxy.net").unwrap());
-
-    let client = Client::new();
-    let resp = client.get(api_url).headers(headers).send();
+    let resp = reqwest::blocking::get(url);
 
     match resp {
         Ok(data) => {
             let proxies_data = data.json::<serde_json::Value>().unwrap();
             let proxies = proxies_data.as_array().unwrap();
+
+            println!("{:#}", proxies[0]);
         }
         Err(e) => {
             println!("{}", e);
