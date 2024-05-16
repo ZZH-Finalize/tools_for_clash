@@ -62,7 +62,7 @@ pub fn main() -> ExitCode {
         }
     };
 
-    println!("Sending out request...");
+    println!("Sending request...");
 
     let resp = reqwest::blocking::get(url);
 
@@ -81,7 +81,7 @@ pub fn main() -> ExitCode {
             match File::create(&file_name) {
                 Ok(mut file) => {
                     let mut write_count = 0;
-                    println!("write data to {}", &file_name);
+                    println!("Write data to {}", &file_name);
 
                     for p in proxies {
                         let p_obj = p.as_object().unwrap();
@@ -96,7 +96,7 @@ pub fn main() -> ExitCode {
 
                         if let Err(e) = writeln!(file, "{}:{}", addr, ID_TO_PTYPE[p_type as usize])
                         {
-                            println!("write {} to file {} fail, error: {}", addr, &file_name, e);
+                            println!("Write {} to file {} fail, error: {}", addr, &file_name, e);
                         } else {
                             write_count += 1;
                         }
