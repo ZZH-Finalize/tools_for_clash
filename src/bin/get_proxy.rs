@@ -94,8 +94,7 @@ pub fn main() -> ExitCode {
                             }
                         }
 
-                        if let Err(e) =
-                            write!(file, "{}:{}\r\n", addr, ID_TO_PTYPE[p_type as usize])
+                        if let Err(e) = writeln!(file, "{}:{}", addr, ID_TO_PTYPE[p_type as usize])
                         {
                             println!("write {} to file {} fail, error: {}", addr, &file_name, e);
                         } else {
